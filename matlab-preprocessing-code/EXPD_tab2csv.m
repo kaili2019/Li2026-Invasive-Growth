@@ -170,7 +170,7 @@ df_D3.full_name = tab_D3(:,11);
 
 %% EXPD_Day_3: write table to csv
 
-% writetable(df_D3,'slad_expD_day3.csv')
+writetable(df_D3,'../raw_data/image_data/slad_expD_day3.csv')
 
 %% EXPD_Day_6: tabulate data
 
@@ -255,4 +255,4 @@ df_D6.full_name = tab_D6(:,11);
 
 %% EXPD_Day_6: write table to csv
 
-% writetable(df_D6,'slad_expD_day6.csv')
+writetable(df_D6,'../raw_data/image_data/slad_expD_day6.csv')
