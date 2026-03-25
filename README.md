@@ -17,13 +17,13 @@ To recreate the CSV data:
 
 A table between the experiment names and number used in the manuscript are mapped below.
 
-| Experiment Name | Experiment Number | Matlab file  |
-|-----------------|-------------------|--------------|
-| E1              | C                 | EXPC_tab2csv |
-| E2              | D                 | EXPD_tab2csv |
-| E3              | E                 | EXPE_tab2csv |
-| E4              | A                 | EXPA_tab2csv |
-| E5              | B                 | EXPB_tab2csv |
+| Experiment Number | Experiment Name   | Matlab file  |
+|-------------------|-------------------|--------------|
+| E1                | C                 | EXPC_tab2csv |
+| E2                | D                 | EXPD_tab2csv |
+| E3                | E                 | EXPE_tab2csv |
+| E4                | A                 | EXPA_tab2csv |
+| E5                | B                 | EXPB_tab2csv |
 
 
 
