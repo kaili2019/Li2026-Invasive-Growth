@@ -23,19 +23,17 @@ nutrient level, strain (parent or mutants) names, day of the experiment
 (days 3,4 or 6), type of experiment (A, B, C, D, or E), and finally the
 original file name containing all the information listed prior.
 
-matlab-preprocessing-code contains matlab code to convert the data on
+`matlab-preprocessing-code` contains matlab code to convert the data on
 figshare to CSV file. For example, EXPA_tab2csv.m is for experiment A
 (E4).
 
-The Matlab files (.mat) contain the entire dataset is available on
-FigShare. DOI: TBA.
+The Matlab files (.mat) contain the entire dataset is available in the folder `matlab-preprocessing-code`. Please open using matlab. First row is of the processed binary images and second row is the corresponding file name. 
 
 To recreate the CSV data:
 
-1.  Download the .mat files from figshare into the
-    matlab-preprocessing-code folder.
+1.  Download the .zip files from github into personal computer and open      the `matlab-preprocessing-code` folder.
 2.  Open and run the Matlab script for each experiment (A-E). For
-    example, EXPA_tab2csv.m would correspond the experiment A.
+    example, `EXPA_tab2csv.m` would correspond the experiment A.
 
 A table between the experiment names and number used in the manuscript
 are mapped below.
