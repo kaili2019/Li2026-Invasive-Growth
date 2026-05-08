@@ -13,8 +13,8 @@ load("surface_C3.mat");
 
 cc = 1;
 for i = 1:length(invasive_C3)
-    tmp_name = invasive_C3{i,3}(1:end-1);
-    if ~contains(tmp_name,surface_C3(:,3))
+    tmp_name = invasive_C3{i,2}(1:end-1);
+    if ~contains(tmp_name,surface_C3(:,2))
 %         disp(tmp_name)
         rm_idx_B3W(cc) = i;
         cc = cc+1;
@@ -24,8 +24,8 @@ end
 %%
 cc = 1;
 for i = 1:length(surface_C3)
-    tmp_name = surface_C3{i,3}+"w";
-    if ~contains(tmp_name,invasive_C3(:,3))
+    tmp_name = surface_C3{i,2}+"w";
+    if ~contains(tmp_name,invasive_C3(:,2))
 %         disp(tmp_name)
         rm_idx_B3S(cc) = i;
         cc = cc+1;
@@ -54,8 +54,8 @@ load("surface_C6.mat");
 %% EXPC_Day_6: match data to get outliers
 cc = 1;
 for i = 1:length(invasive_C6)
-    tmp_name = invasive_C6{i,3}(1:end-1);
-    if ~contains(tmp_name,surface_C6(:,3))
+    tmp_name = invasive_C6{i,2}(1:end-1);
+    if ~contains(tmp_name,surface_C6(:,2))
 %         disp(tmp_name)
         rm_idx_B6W(cc) = i;
         cc = cc+1;
@@ -65,8 +65,8 @@ end
 %%
 cc = 1;
 for i = 1:length(surface_C6)
-    tmp_name = surface_C6{i,3}+"w";
-    if ~contains(tmp_name,invasive_C6(:,3))
+    tmp_name = surface_C6{i,2}+"w";
+    if ~contains(tmp_name,invasive_C6(:,2))
 %         disp(tmp_name)
         rm_idx_B6S(cc) = i;
         cc = cc+1;
@@ -87,20 +87,20 @@ tab_C3 = cell(NC3,11);
 for i = 1:NC3
 
     % 1. full name or ID
-    if contains(invasive_C3{i,3},'796')
+    if contains(invasive_C3{i,2},'796')
         tab_C3{i,1} = "parent";
     else
-        tab_C3{i,1} = invasive_C3{i,3}(1:3);
+        tab_C3{i,1} = invasive_C3{i,2}(1:3);
     end
     
     % 2. suphide (Y/N)
-    if contains(invasive_C3{i,3},'400S') || contains(invasive_C3{i,3},'750S')
+    if contains(invasive_C3{i,2},'400S') || contains(invasive_C3{i,2},'750S')
         tab_C3{i,2} = 'Y';
     else
         tab_C3{i,2} = 'N';
     end
     
-    tmp_idx = find(contains(surface_C3(:,3),invasive_C3{i,3}(1:end-1)));
+    tmp_idx = find(contains(surface_C3(:,2),invasive_C3{i,2}(1:end-1)));
     
     % 3. surface area 
     Itmp = surface_C3{tmp_idx,1};
@@ -117,17 +117,17 @@ for i = 1:NC3
     tab_C3{i,6} = "Nov_11";
     
     % 7. nutrient: 
-    if contains(invasive_C3{i,3},'BD50')
+    if contains(invasive_C3{i,2},'BD50')
         tab_C3{i,7} = "BD50";
-    elseif contains(invasive_C3{i,3},'BD75')
+    elseif contains(invasive_C3{i,2},'BD75')
         tab_C3{i,7} = "BD75";
-    elseif contains(invasive_C3{i,3},'BD100')
+    elseif contains(invasive_C3{i,2},'BD100')
         tab_C3{i,7} = "BD100";
-    elseif contains(invasive_C3{i,3},'Ox50')
+    elseif contains(invasive_C3{i,2},'Ox50')
         tab_C3{i,7} = "Ox50";
-    elseif contains(invasive_C3{i,3},'Ox75')
+    elseif contains(invasive_C3{i,2},'Ox75')
         tab_C3{i,7} = "Ox75";
-    elseif contains(invasive_C3{i,3},'Ox100')
+    elseif contains(invasive_C3{i,2},'Ox100')
         tab_C3{i,7} = "Ox100";       
     else
         tab_C3{i,7} = nan;
@@ -143,7 +143,7 @@ for i = 1:NC3
     tab_C3{i,10} = "ExpC";
 
     % 11. Full name
-    tab_C3{i,11} = invasive_C3{i,3}(1:end-1);
+    tab_C3{i,11} = invasive_C3{i,2}(1:end-1);
 end
 
 %% EXPC_Day_4: concantenate to a single table 
@@ -167,7 +167,7 @@ df_C3.full_name = tab_C3(:,11);
 
 %% EXPA_Day_4: write table to csv
 
-writetable(df_C3,'../raw_data/image_data/slad_expC_day3.csv')
+% writetable(df_C3,'../raw_data/image_data/slad_expC_day3.csv')
 
 %% EXPC_Day_6: tabulate data
 
@@ -178,20 +178,20 @@ tab_C6 = cell(NC6,11);
 for i = 1:NC6
 
     % 1. full name or ID
-    if contains(invasive_C6{i,3},'796')
+    if contains(invasive_C6{i,2},'796')
         tab_C6{i,1} = "parent";
     else
-        tab_C6{i,1} = invasive_C6{i,3}(1:3);
+        tab_C6{i,1} = invasive_C6{i,2}(1:3);
     end
 
     % 2. suphide (Y/N)
-    if contains(invasive_C3{i,3},'400S') || contains(invasive_C3{i,3},'750S')
+    if contains(invasive_C3{i,2},'400S') || contains(invasive_C3{i,2},'750S')
         tab_C6{i,2} = 'Y';
     else
         tab_C6{i,2} = 'N';
     end
     
-    tmp_idx = find(contains(surface_C6(:,3),invasive_C6{i,3}(1:end-1)));
+    tmp_idx = find(contains(surface_C6(:,2),invasive_C6{i,2}(1:end-1)));
     
     % 3. surface area 
     Itmp = surface_C6{tmp_idx,1};
@@ -208,11 +208,11 @@ for i = 1:NC6
     tab_C6{i,6} = "Nov_14";
     
     % 7. nutrient: BD50 or BD75
-    if contains(invasive_C6{i,3},'BD50')
+    if contains(invasive_C6{i,2},'BD50')
         tab_C6{i,7} = "BD50";
-    elseif contains(invasive_C6{i,3},'BD75')
+    elseif contains(invasive_C6{i,2},'BD75')
         tab_C6{i,7} = "BD75";
-    elseif contains(invasive_C6{i,3},'BD100')
+    elseif contains(invasive_C6{i,2},'BD100')
         tab_C6{i,7} = "BD100";      
     else
         tab_C6{i,7} = nan;
@@ -228,7 +228,7 @@ for i = 1:NC6
     tab_C6{i,10} = "ExpC";
 
     % 11. Full name
-    tab_C6{i,11} = invasive_C6{i,3}(1:end-1);
+    tab_C6{i,11} = invasive_C6{i,2}(1:end-1);
 end
 
 %% EXPA_Day_6: concantenate to a single table 
@@ -252,4 +252,4 @@ df_C6.full_name = tab_C6(:,11);
 
 %% EXPC_Day_6: write table to csv
 
-writetable(df_C6,'../raw_data/image_data/slad_expC_day6.csv')
+% writetable(df_C6,'../raw_data/image_data/slad_expC_day6.csv')
