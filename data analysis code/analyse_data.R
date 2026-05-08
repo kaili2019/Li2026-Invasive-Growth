@@ -1030,7 +1030,7 @@ modelsummary(e2_3_4_image_model,
              heights = c(3,8,8),
              ncol = 1, align = "v")
 
-   ggsave("images/experiment5_model.pdf", device = cairo_pdf, width = 7, height = 6)  
+   ggsave("images/experiment5_model.pdf", device = cairo_pdf, width = 7, height = 7)  
    
    
    e5_all_parameters <-c(

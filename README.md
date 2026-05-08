@@ -66,13 +66,13 @@ These files all use relative file paths and should replicate with no
 changes (aside from package installation as necessary). To use the
 relative file paths, make sure to open the .Rproj file in RStudio.
 
--   The file `nutrient_experiment_analysis `creates Figure 2 from the
+-   The file `nutrient_experiment_analysis`creates Figure 2 from the
     manuscript
 -   The file `clean_count_data.R` takes the originally provided excel
     spreadsheets that include count data for all experiments, takes the
     information from each sheet and saves it as a cleaned rds file
--   The file `clean_image_data.R` does reads in the processed image data csv file, does
-    minimal tidying and saves in rds format
+-   The file `clean_image_data.R` does reads in the processed image data
+    csv file, does minimal tidying and saves in rds format
 -   The `merge_data.R` file does a large amount of data munging of both
     files so they have the same variable names/levels where indicated.
     After saving these cleaned files, checks are made for consistency
